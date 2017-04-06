@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -8,9 +9,15 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 
 public class ExampleTest {
+    private BibliotecaApp bibliotecaApp;
+
+    @Before
+    public void testSet() {
+        bibliotecaApp = new BibliotecaApp();
+    }
+
     @Test
     public void testPrintWelcomeMessage() {
-        BibliotecaApp bibliotecaApp = new BibliotecaApp();
         String actualMessage = bibliotecaApp.printWelcomeMessage();
 
         assertEquals("Welcome to Biblioteca", actualMessage);
@@ -18,7 +25,6 @@ public class ExampleTest {
 
     @Test
     public void testUserCanGetBooksList() {
-        BibliotecaApp bibliotecaApp = new BibliotecaApp();
         ArrayList<String> bookList = bibliotecaApp.getBookList();
         ArrayList<String> expectList = new ArrayList<String>(){{
             add("Test-driven Development");
