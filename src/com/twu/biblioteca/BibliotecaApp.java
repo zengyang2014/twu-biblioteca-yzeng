@@ -9,6 +9,7 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         System.out.println(bibliotecaApp.printWelcomeMessage());
+        System.out.println(bibliotecaApp.printBookList());
     }
 
     BibliotecaApp(){
@@ -17,6 +18,18 @@ public class BibliotecaApp {
         bookList.add("Refactoring: Improving the Design of Existing Code");
         bookList.add("Head First Java");
         bookList.add("Core Java Volume I");
+    }
+    public String printBookList() {
+        if(bookList == null) {
+            return null;
+        }
+
+        String printString = "";
+        for (int i = 0; i < bookList.size(); i++) {
+            printString += bookList.get(i) + "\n";
+        }
+
+        return printString;
     }
 
     public String printWelcomeMessage() {

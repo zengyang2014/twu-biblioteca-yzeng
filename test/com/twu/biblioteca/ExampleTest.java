@@ -35,4 +35,15 @@ public class ExampleTest {
 
         assertEquals(expectList, bookList);
     }
+
+    @Test
+    public void testPrintBookList() {
+        String actualPrint = bibliotecaApp.printBookList();
+        String expectPrint = "Test-driven Development\n" +
+                "Refactoring: Improving the Design of Existing Code\n" +
+                "Head First Java\n" +
+                "Core Java Volume I\n";
+
+        assertEquals(expectPrint,actualPrint);
+    }
 }
