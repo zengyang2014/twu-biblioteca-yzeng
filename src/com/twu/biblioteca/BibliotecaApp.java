@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BibliotecaApp {
 
@@ -10,10 +11,7 @@ public class BibliotecaApp {
 
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
-        System.out.println(bibliotecaApp.printWelcomeMessage());
-        System.out.println(bibliotecaApp.printMainMenu());
-        System.out.println(bibliotecaApp.printBookList());
-        System.out.println(bibliotecaApp.printBooksDetail());
+        bibliotecaApp.runApp();
     }
 
     BibliotecaApp(){
@@ -26,6 +24,31 @@ public class BibliotecaApp {
         bookLists.add(new Book("Refactoring: Improving the Design of Existing Code", "Martin Fowler", "2012"));
         bookLists.add(new Book("Head First Java", "Kathy Sierra, Bert Bates", "2003"));
         bookLists.add(new Book("Core Java Volume I", "Cay S. Horstmann", "2015"));
+    }
+
+    public void runApp() {
+        System.out.println(printWelcomeMessage());
+        String instruction = "";
+        while (!instruction.equals("exit") && !instruction.equals("0")) {
+            System.out.println(printMainMenu());
+            System.out.println("Please input the selection:");
+            Scanner scanner = new Scanner(System.in);
+            instruction = scanner.next();
+            switch (instruction) {
+                case "0":
+                    break;
+                case "1":
+                    System.out.println(printBooksDetail());
+                    break;
+                default:
+                    System.out.println(printWrongInstructionMessage());
+                    break;
+            }
+        }
+    }
+
+    public String printWrongInstructionMessage() {
+        return "Select a valid option!";
     }
 
     public String printBookList() {
@@ -42,7 +65,7 @@ public class BibliotecaApp {
     }
 
     public String printWelcomeMessage() {
-        return "Welcome to Biblioteca";
+        return "Welcome to Biblioteca\n------------------------------------------";
     }
 
     public ArrayList<Book> getBookLists() {
@@ -79,6 +102,6 @@ public class BibliotecaApp {
     }
 
     public String printMainMenu() {
-        return "List Books";
+        return "Main Manu:\n * 1. List Books\n * 0. exit";
     }
 }

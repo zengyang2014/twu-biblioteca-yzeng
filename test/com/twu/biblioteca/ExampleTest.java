@@ -17,7 +17,7 @@ public class ExampleTest {
     public void testPrintWelcomeMessage() {
         String actualMessage = bibliotecaApp.printWelcomeMessage();
 
-        assertEquals("Welcome to Biblioteca", actualMessage);
+        assertEquals("Welcome to Biblioteca\n------------------------------------------", actualMessage);
     }
 
     @Test
@@ -46,7 +46,15 @@ public class ExampleTest {
     @Test
     public void testShowMainMenu() {
         String actualPrint = bibliotecaApp.printMainMenu();
-        String expectPrint = "List Books";
+        String expectPrint = "Main Manu:\n * 1. List Books\n * 0. exit";
+
+        assertEquals(expectPrint, actualPrint);
+    }
+
+    @Test
+    public void testShowInvalidMessage() {
+        String expectPrint = "Select a valid option!";
+        String actualPrint = bibliotecaApp.printWrongInstructionMessage();
 
         assertEquals(expectPrint, actualPrint);
     }
