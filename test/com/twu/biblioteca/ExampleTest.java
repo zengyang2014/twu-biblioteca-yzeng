@@ -58,4 +58,12 @@ public class ExampleTest {
 
         assertEquals(expectPrint, actualPrint);
     }
+
+    @Test
+    public void testPrintQuitMessage() {
+        String expectPrint = "Goodbye!";
+        String actualPrint = bibliotecaApp.printQuitMessage();
+
+        assertEquals(expectPrint, actualPrint);
+    }
 }

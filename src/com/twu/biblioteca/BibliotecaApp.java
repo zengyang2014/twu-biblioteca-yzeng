@@ -29,7 +29,7 @@ public class BibliotecaApp {
     public void runApp() {
         System.out.println(printWelcomeMessage());
         String instruction = "";
-        while (!instruction.equals("exit") && !instruction.equals("0")) {
+        while (!instruction.equals("Quit") && !instruction.equals("0")) {
             System.out.println(printMainMenu());
             System.out.println("Please input the selection:");
             Scanner scanner = new Scanner(System.in);
@@ -45,6 +45,11 @@ public class BibliotecaApp {
                     break;
             }
         }
+        System.out.println(printQuitMessage());
+    }
+
+    public String printQuitMessage() {
+        return "Goodbye!";
     }
 
     public String printWrongInstructionMessage() {
