@@ -11,6 +11,7 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
         System.out.println(bibliotecaApp.printWelcomeMessage());
+        System.out.println(bibliotecaApp.printMainMenu());
         System.out.println(bibliotecaApp.printBookList());
         System.out.println(bibliotecaApp.printBooksDetail());
     }
@@ -75,5 +76,9 @@ public class BibliotecaApp {
             spaces += " ";
         }
         return spaces;
+    }
+
+    public String printMainMenu() {
+        return "List Books";
     }
 }

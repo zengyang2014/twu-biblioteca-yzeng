@@ -42,4 +42,12 @@ public class ExampleTest {
 
         assertEquals(expectPrint, actualPrint);
     }
+
+    @Test
+    public void testShowMainMenu() {
+        String actualPrint = bibliotecaApp.printMainMenu();
+        String expectPrint = "List Books";
+
+        assertEquals(expectPrint, actualPrint);
+    }
 }
