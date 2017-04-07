@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57be3450-2248-456d-8b39-c9b72c4f0728" name="Default" comment="George | List Books | Write test to make sure user can get the book list. As well, write a constructor to initial book list and a getter.">
+    <list default="true" id="57be3450-2248-456d-8b39-c9b72c4f0728" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/ExampleTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/ExampleTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,26 +18,27 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="-15">
+              <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
               <folding>
-                <element signature="e#628#629#0" expanded="true" />
-                <element signature="e#674#675#0" expanded="true" />
-                <element signature="e#720#721#0" expanded="true" />
-                <element signature="e#751#752#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1957#1958#0" expanded="true" />
+                <element signature="e#2003#2004#0" expanded="true" />
+                <element signature="e#2049#2050#0" expanded="true" />
+                <element signature="e#2080#2081#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExampleTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExampleTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ExampleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="352">
+              <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding>
                 <element signature="e#261#262#0" expanded="true" />
                 <element signature="e#312#313#0" expanded="true" />
@@ -74,8 +75,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ExampleTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
       </list>
     </option>
   </component>
@@ -261,6 +262,32 @@
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.ExampleTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ExampleTest.testPrintBookList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="twu-biblioteca-yzeng" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.ExampleTest" />
+      <option name="METHOD_NAME" value="testPrintBookList" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -647,18 +674,20 @@
       <envs />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.BibliotecaApp" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.ExampleTest.testPrintWelcomeMessage" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.ExampleTest.testUserCanGetBooksList" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.ExampleTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ExampleTest.testPrintBookList" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.ExampleTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ExampleTest.testUserCanGetBooksList" />
-        <item index="2" class="java.lang.String" itemvalue="Application.BibliotecaApp" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ExampleTest.testPrintWelcomeMessage" />
+        <item index="1" class="java.lang.String" itemvalue="Application.BibliotecaApp" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ExampleTest.testPrintBookList" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ExampleTest.testUserCanGetBooksList" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ExampleTest.testPrintWelcomeMessage" />
       </list>
     </recent_temporary>
   </component>
@@ -678,7 +707,7 @@
       <option name="presentableId" value="Default" />
       <updated>1491472779060</updated>
       <workItem from="1491472780695" duration="60000" />
-      <workItem from="1491485418119" duration="3168000" />
+      <workItem from="1491485418119" duration="9680000" />
     </task>
     <task id="LOCAL-00001" summary="George | set up all environment to see the &quot;Hello world&quot;">
       <created>1491486719065</created>
@@ -708,7 +737,21 @@
       <option name="project" value="LOCAL" />
       <updated>1491488475067</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="George | List Books | Refactor test to reduce the duplication.">
+      <created>1491488637541</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1491488637541</updated>
+    </task>
+    <task id="LOCAL-00006" summary="George | List Books | Add test to test the booklist can be print correctly. And write complement to pass it.">
+      <created>1491529254315</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1491529254315</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -721,17 +764,14 @@
     <history-entry file="ExampleTest - 2017.04.06 at 22h 23m 09s.xml">
       <configuration name="ExampleTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExampleTest_testPrintWelcomeMessage - 2017.04.06 at 21h 57m 45s.xml">
-      <configuration name="ExampleTest.testPrintWelcomeMessage" configurationId="JUnit" />
+    <history-entry file="ExampleTest - 2017.04.07 at 12h 41m 43s.xml">
+      <configuration name="ExampleTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExampleTest_testUserCanGetBooksList - 2017.04.06 at 22h 14m 59s.xml">
-      <configuration name="ExampleTest.testUserCanGetBooksList" configurationId="JUnit" />
+    <history-entry file="ExampleTest_testPrintBookList - 2017.04.07 at 09h 34m 32s.xml">
+      <configuration name="ExampleTest.testPrintBookList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExampleTest_testUserCanGetBooksList - 2017.04.06 at 22h 16m 07s.xml">
-      <configuration name="ExampleTest.testUserCanGetBooksList" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExampleTest_testUserCanGetBooksList - 2017.04.06 at 22h 16m 18s.xml">
-      <configuration name="ExampleTest.testUserCanGetBooksList" configurationId="JUnit" />
+    <history-entry file="ExampleTest_testPrintBookList - 2017.04.07 at 09h 38m 30s.xml">
+      <configuration name="ExampleTest.testPrintBookList" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ExampleTest_testUserCanGetBooksList - 2017.04.06 at 22h 16m 21s.xml">
       <configuration name="ExampleTest.testUserCanGetBooksList" configurationId="JUnit" />
@@ -742,9 +782,12 @@
     <history-entry file="ExampleTest_testUserCanGetBooksList - 2017.04.06 at 22h 17m 22s.xml">
       <configuration name="ExampleTest.testUserCanGetBooksList" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ExampleTest_testUserCanGetBooksList - 2017.04.07 at 09h 34m 25s.xml">
+      <configuration name="ExampleTest.testUserCanGetBooksList" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3228000" />
+    <option name="totallyTimeSpent" value="9740000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -804,7 +847,9 @@
     <MESSAGE value="George | Welcome Message | Write test to make sure app give the right welcome message and write a function to return the welcome message." />
     <MESSAGE value="George | Welcome Message | Refactor code to delete useless unit test." />
     <MESSAGE value="George | List Books | Write test to make sure user can get the book list. As well, write a constructor to initial book list and a getter." />
-    <option name="LAST_COMMIT_MESSAGE" value="George | List Books | Write test to make sure user can get the book list. As well, write a constructor to initial book list and a getter." />
+    <MESSAGE value="George | List Books | Refactor test to reduce the duplication." />
+    <MESSAGE value="George | List Books | Add test to test the booklist can be print correctly. And write complement to pass it." />
+    <option name="LAST_COMMIT_MESSAGE" value="George | List Books | Add test to test the booklist can be print correctly. And write complement to pass it." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -822,10 +867,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1957#1958#0" expanded="true" />
+            <element signature="e#2003#2004#0" expanded="true" />
+            <element signature="e#2049#2050#0" expanded="true" />
+            <element signature="e#2080#2081#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -862,26 +908,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ExampleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="352">
+          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding>
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#312#313#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ExampleTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="-15">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
           <folding>
-            <element signature="e#261#262#0" expanded="true" />
-            <element signature="e#312#313#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1957#1958#0" expanded="true" />
+            <element signature="e#2003#2004#0" expanded="true" />
+            <element signature="e#2049#2050#0" expanded="true" />
+            <element signature="e#2080#2081#0" expanded="true" />
           </folding>
         </state>
       </provider>
