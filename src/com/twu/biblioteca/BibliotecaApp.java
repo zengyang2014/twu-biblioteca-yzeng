@@ -73,10 +73,6 @@ public class BibliotecaApp {
         return "Welcome to Biblioteca\n------------------------------------------";
     }
 
-    public ArrayList<Book> getBookLists() {
-        return bookLists;
-    }
-
     public String printBooksDetail() {
         String booksDetails = printOneRow(new Book());
         for(int i = 0; i < bookLists.size(); i++)
