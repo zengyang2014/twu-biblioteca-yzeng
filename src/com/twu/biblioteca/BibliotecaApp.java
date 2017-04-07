@@ -8,13 +8,15 @@ public class BibliotecaApp {
 
     private static final int MAX_CELL_SPACE = 70;
     private ArrayList<Book> bookLists = null;
+    private Output console;
 
     public static void main(String[] args) {
-        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(new ConsoleOutput());
         bibliotecaApp.runApp();
     }
 
-    BibliotecaApp(){
+    BibliotecaApp(Output output){
+        console = output;
         initializeBookList();
     }
 
@@ -27,25 +29,25 @@ public class BibliotecaApp {
     }
 
     public void runApp() {
-        System.out.println(printWelcomeMessage());
+        console.print(printWelcomeMessage());
         String instruction = "";
         while (!instruction.equals("Quit") && !instruction.equals("0")) {
-            System.out.println(printMainMenu());
-            System.out.println("Please input the selection:");
+            console.print(printMainMenu());
+            console.print("Please input the selection:");
             Scanner scanner = new Scanner(System.in);
             instruction = scanner.next();
             switch (instruction) {
                 case "0":
                     break;
                 case "1":
-                    System.out.println(printBooksDetail());
+                    console.print(printBooksDetail());
                     break;
                 default:
-                    System.out.println(printWrongInstructionMessage());
+                    console.print(printWrongInstructionMessage());
                     break;
             }
         }
-        System.out.println(printQuitMessage());
+        console.print(printQuitMessage());
     }
 
     public String printQuitMessage() {
