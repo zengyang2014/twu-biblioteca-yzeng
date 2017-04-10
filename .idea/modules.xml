@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/twu-biblioteca-yzeng.iml" filepath="$PROJECT_DIR$/.idea/twu-biblioteca-yzeng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/twu-biblioteca-yzeng.iml" filepath="$PROJECT_DIR$/.idea/modules/twu-biblioteca-yzeng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/twu-biblioteca-yzeng_main.iml" filepath="$PROJECT_DIR$/.idea/modules/twu-biblioteca-yzeng_main.iml" group="twu-biblioteca-yzeng" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/twu-biblioteca-yzeng_test.iml" filepath="$PROJECT_DIR$/.idea/modules/twu-biblioteca-yzeng_test.iml" group="twu-biblioteca-yzeng" />
     </modules>
   </component>
 </project>
