@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 public class BibliotecaAppTest {
@@ -14,13 +15,6 @@ public class BibliotecaAppTest {
     @Before
     public void testSet() {
         bibliotecaApp = new BibliotecaApp(new ConsoleOutput());
-    }
-
-    @Test
-    public void testPrintWelcomeMessage() {
-        String actualMessage = bibliotecaApp.printWelcomeMessage();
-
-        assertEquals("Welcome to Biblioteca\n------------------------------------------", actualMessage);
     }
 
     @Test
@@ -71,10 +65,11 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void shouldPrintOutSth() throws Exception {
+    public void shouldPrintWelcomeMessage() throws Exception {
         ConsoleOutput output = mock(ConsoleOutput.class);
         BibliotecaApp bibliotecaApp = new BibliotecaApp(output);
+        bibliotecaApp.printWelcomeMessage();
 
-        verify(output).print("welcome message!");
+        verify(output, times(1)).print("Welcome to Biblioteca\n------------------------------------------");
     }
 }

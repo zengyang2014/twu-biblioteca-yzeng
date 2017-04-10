@@ -26,7 +26,7 @@ public class BibliotecaApp {
     }
 
     public void runApp() {
-        console.print(printWelcomeMessage());
+        printWelcomeMessage();
         String instruction = "";
         while (!instruction.equals("Quit") && !instruction.equals("0")) {
             console.print(printMainMenu());
@@ -68,8 +68,8 @@ public class BibliotecaApp {
         return printString;
     }
 
-    public String printWelcomeMessage() {
-        return "Welcome to Biblioteca\n------------------------------------------";
+    public void printWelcomeMessage() {
+        console.print("Welcome to Biblioteca\n------------------------------------------");
     }
 
     public String printBooksDetail() {
