@@ -40,7 +40,7 @@ public class BibliotecaApp {
                     printBooksDetail();
                     break;
                 default:
-                    console.print(printWrongInstructionMessage());
+                    printWrongInstructionMessage();
                     break;
             }
         }
@@ -51,8 +51,8 @@ public class BibliotecaApp {
         return "Goodbye!";
     }
 
-    public String printWrongInstructionMessage() {
-        return "Select a valid option!";
+    public void printWrongInstructionMessage() {
+        console.print("Select a valid option!");
     }
 
     public String printBookList() {

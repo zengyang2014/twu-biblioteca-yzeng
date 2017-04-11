@@ -48,11 +48,11 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void testShowInvalidMessage() {
+    public void shouldShowInvalidMessage() {
         String expectPrint = "Select a valid option!";
-        String actualPrint = bibliotecaApp.printWrongInstructionMessage();
+        bibliotecaApp.printWrongInstructionMessage();
 
-        assertEquals(expectPrint, actualPrint);
+        verify(output, times(1)).print(expectPrint);
     }
 
     @Test
