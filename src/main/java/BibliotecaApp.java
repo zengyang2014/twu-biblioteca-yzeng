@@ -89,7 +89,10 @@ public class BibliotecaApp {
     }
 
     public void checkoutBook(int index) {
-        bookLists.remove(index);
+        if(index >= 0 && index < bookLists.size()) {
+            bookLists.remove(index);
+            console.print("Thank you! Enjoy the book");
+        }
     }
 
     private String generateOneRow(Book book) {
