@@ -37,7 +37,7 @@ public class BibliotecaApp {
                 case "0":
                     break;
                 case "1":
-                    console.print(printBooksDetail());
+                    printBooksDetail();
                     break;
                 default:
                     console.print(printWrongInstructionMessage());
@@ -72,22 +72,22 @@ public class BibliotecaApp {
         console.print("Welcome to Biblioteca\n------------------------------------------");
     }
 
-    public String printBooksDetail() {
-        String booksDetails = printOneRow(new Book());
+    public void printBooksDetail() {
+        String booksDetails = generateOneRow(new Book());
         for(int i = 0; i < bookLists.size(); i++)
         {
-            booksDetails += printOneRow(bookLists.get(i));
+            booksDetails += generateOneRow(bookLists.get(i));
         }
-        return booksDetails;
+        console.print(booksDetails);
     }
 
-    private String printOneRow(Book book) {
-        return printOneCell(book.getBookName()) +
-                printOneCell(book.getAuthor()) +
-                printOneCell(book.getYearPublished()) + "\n";
+    private String generateOneRow(Book book) {
+        return generateOneCell(book.getBookName()) +
+                generateOneCell(book.getAuthor()) +
+                generateOneCell(book.getYearPublished()) + "\n";
     }
 
-    private String printOneCell(String cellElement) {
+    private String generateOneCell(String cellElement) {
         String oneCell = "";
         oneCell += cellElement + createSpace(MAX_CELL_SPACE - cellElement.length());
         return oneCell;

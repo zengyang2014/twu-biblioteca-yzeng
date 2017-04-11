@@ -29,15 +29,15 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void testPrintBookListWithDetail() {
-        String actualPrint = bibliotecaApp.printBooksDetail();
+    public void shouldPrintBookListWithDetail() {
+        bibliotecaApp.printBooksDetail();
         String expectPrint = "Book Name                                                             Author                                                                Year Published                                                        \n" +
                 "Test-driven Development                                               Kent Beck                                                             2003                                                                  \n" +
                 "Refactoring: Improving the Design of Existing Code                    Martin Fowler                                                         2012                                                                  \n" +
                 "Head First Java                                                       Kathy Sierra, Bert Bates                                              2003                                                                  \n" +
                 "Core Java Volume I                                                    Cay S. Horstmann                                                      2015                                                                  \n";
 
-        assertEquals(expectPrint, actualPrint);
+        verify(output, times(1)).print(expectPrint);
     }
 
     @Test
