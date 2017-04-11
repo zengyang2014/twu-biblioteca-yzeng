@@ -98,8 +98,11 @@ public class BibliotecaApp {
         }
     }
 
-    public void ckeckinBook(Book returnBook) {
-        bookLists.add(returnBook);
+    public void returnBook(Book returnBook) {
+        if(returnBook != null) {
+            bookLists.add(returnBook);
+            console.print("Thank you for returning the book.");
+        }
     }
 
     private String generateOneRow(Book book) {

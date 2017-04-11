@@ -97,9 +97,18 @@ public class BibliotecaAppTest {
     @Test
     public void shouldCanReturnBook() throws Exception {
         Book returnBook = new Book("testBook", "testAuthor","testYear");
-        bibliotecaApp.ckeckinBook(returnBook);
+        bibliotecaApp.returnBook(returnBook);
 
         assertEquals(5, bibliotecaApp.getBookLists().size());
         assertTrue(bibliotecaApp.getBookLists().contains(returnBook));
+    }
+
+    @Test
+    public void shouldReturnBookSuccessfully() throws  Exception {
+        Book returnBook = new Book("testBook", "testAuthor","testYear");
+        bibliotecaApp.returnBook(returnBook);
+
+        assertTrue(bibliotecaApp.getBookLists().contains(returnBook));
+        verify(output, times(1)).print("Thank you for returning the book.");
     }
 }
