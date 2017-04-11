@@ -79,7 +79,7 @@ public class BibliotecaApp {
         String booksDetails = generateOneRow(new Book());
         for(int i = 0; i < bookLists.size(); i++)
         {
-            booksDetails += generateOneRow(bookLists.get(i));
+            booksDetails += i + ". " + generateOneRow(bookLists.get(i));
         }
         console.print(booksDetails);
     }
@@ -89,7 +89,7 @@ public class BibliotecaApp {
     }
 
     public void checkoutBook(int index) {
-        bookLists.remove(index - 1);
+        bookLists.remove(index);
     }
 
     private String generateOneRow(Book book) {
