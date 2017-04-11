@@ -69,4 +69,13 @@ public class BibliotecaAppTest {
 
         verify(output, times(1)).print("Welcome to Biblioteca\n------------------------------------------");
     }
+
+    @Test
+    public void shouldCheckoutBook() throws Exception {
+        Book checkoutBook = bibliotecaApp.getBookLists().get(1);
+        bibliotecaApp.checkoutBook(1);
+
+        assertEquals(3,bibliotecaApp.getBookLists().size());
+        assertTrue(!bibliotecaApp.getBookLists().get(1).getBookName().equals(checkoutBook.getBookName()));
+    }
 }

@@ -17,13 +17,10 @@ public class BibliotecaApp {
         initializeBookList();
     }
 
-    private void initializeBookList() {
-        bookLists = new ArrayList<Book>();
-        bookLists.add(new Book("Test-driven Development", "Kent Beck", "2003"));
-        bookLists.add(new Book("Refactoring: Improving the Design of Existing Code", "Martin Fowler", "2012"));
-        bookLists.add(new Book("Head First Java", "Kathy Sierra, Bert Bates", "2003"));
-        bookLists.add(new Book("Core Java Volume I", "Cay S. Horstmann", "2015"));
+    public ArrayList<Book> getBookLists() {
+        return bookLists;
     }
+
 
     public void runApp() {
         printWelcomeMessage();
@@ -81,6 +78,14 @@ public class BibliotecaApp {
         console.print(booksDetails);
     }
 
+    public void printMainMenu() {
+        console.print("Main Manu:\n * 1. List Books\n * 0. exit");
+    }
+
+    public void checkoutBook(int index) {
+        bookLists.remove(index - 1);
+    }
+
     private String generateOneRow(Book book) {
         return generateOneCell(book.getBookName()) +
                 generateOneCell(book.getAuthor()) +
@@ -101,7 +106,11 @@ public class BibliotecaApp {
         return spaces;
     }
 
-    public void printMainMenu() {
-        console.print("Main Manu:\n * 1. List Books\n * 0. exit");
+    private void initializeBookList() {
+        bookLists = new ArrayList<Book>();
+        bookLists.add(new Book("Test-driven Development", "Kent Beck", "2003"));
+        bookLists.add(new Book("Refactoring: Improving the Design of Existing Code", "Martin Fowler", "2012"));
+        bookLists.add(new Book("Head First Java", "Kathy Sierra, Bert Bates", "2003"));
+        bookLists.add(new Book("Core Java Volume I", "Cay S. Horstmann", "2015"));
     }
 }
