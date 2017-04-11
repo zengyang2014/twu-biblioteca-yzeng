@@ -71,7 +71,7 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void shouldCheckoutBook() throws Exception {
+    public void shouldCanCheckoutBook() throws Exception {
         Book checkoutBook = bibliotecaApp.getBookLists().get(1);
         bibliotecaApp.checkoutBook(1);
 
@@ -92,5 +92,14 @@ public class BibliotecaAppTest {
         bibliotecaApp.checkoutBook(10);
 
         verify(output, times(1)).print("That book is not available.");
+    }
+
+    @Test
+    public void shouldCanReturnBook() throws Exception {
+        Book returnBook = new Book("testBook", "testAuthor","testYear");
+        bibliotecaApp.ckeckinBook(returnBook);
+
+        assertEquals(5, bibliotecaApp.getBookLists().size());
+        assertTrue(bibliotecaApp.getBookLists().contains(returnBook));
     }
 }

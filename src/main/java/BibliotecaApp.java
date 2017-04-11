@@ -98,6 +98,10 @@ public class BibliotecaApp {
         }
     }
 
+    public void ckeckinBook(Book returnBook) {
+        bookLists.add(returnBook);
+    }
+
     private String generateOneRow(Book book) {
         return generateOneCell(book.getBookName()) +
                 generateOneCell(book.getAuthor()) +
