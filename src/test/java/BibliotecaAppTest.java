@@ -58,9 +58,9 @@ public class BibliotecaAppTest {
     @Test
     public void testPrintQuitMessage() {
         String expectPrint = "Goodbye!";
-        String actualPrint = bibliotecaApp.printQuitMessage();
+        bibliotecaApp.printQuitMessage();
 
-        assertEquals(expectPrint, actualPrint);
+        verify(output, times(1)).print(expectPrint);
     }
 
     @Test

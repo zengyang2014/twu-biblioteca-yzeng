@@ -44,11 +44,11 @@ public class BibliotecaApp {
                     break;
             }
         }
-        console.print(printQuitMessage());
+        printQuitMessage();
     }
 
-    public String printQuitMessage() {
-        return "Goodbye!";
+    public void printQuitMessage() {
+        console.print("Goodbye!");
     }
 
     public void printWrongInstructionMessage() {
