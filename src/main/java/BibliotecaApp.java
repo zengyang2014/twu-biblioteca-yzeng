@@ -103,6 +103,9 @@ public class BibliotecaApp {
             bookLists.add(returnBook);
             console.print("Thank you for returning the book.");
         }
+        else{
+            console.print("That is not a valid book to return.");
+        }
     }
 
     private String generateOneRow(Book book) {

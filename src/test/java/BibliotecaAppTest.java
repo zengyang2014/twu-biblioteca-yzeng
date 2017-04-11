@@ -111,4 +111,12 @@ public class BibliotecaAppTest {
         assertTrue(bibliotecaApp.getBookLists().contains(returnBook));
         verify(output, times(1)).print("Thank you for returning the book.");
     }
+
+    @Test
+    public void shouldReturnBookUnsuccessfully() throws Exception {
+        Book returnBook = null;
+        bibliotecaApp.returnBook(returnBook);
+
+        verify(output, times(1)).print("That is not a valid book to return.");
+    }
 }
