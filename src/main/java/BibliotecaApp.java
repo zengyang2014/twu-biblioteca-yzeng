@@ -35,6 +35,8 @@ public class BibliotecaApp {
                     break;
                 case "1":
                     printBooksDetail();
+                    printHelpMessageToCheckoutBook();
+                    checkoutBook(scanner.nextInt());
                     break;
                 default:
                     printWrongInstructionMessage();
@@ -42,6 +44,10 @@ public class BibliotecaApp {
             }
         }
         printQuitMessage();
+    }
+
+    private void printHelpMessageToCheckoutBook() {
+        console.print("Input the index of book which need to checkout.");
     }
 
     public void printQuitMessage() {
