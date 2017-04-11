@@ -29,7 +29,7 @@ public class BibliotecaApp {
         printWelcomeMessage();
         String instruction = "";
         while (!instruction.equals("Quit") && !instruction.equals("0")) {
-            console.print(printMainMenu());
+`            printMainMenu();
             console.print("Please input the selection:");
             Scanner scanner = new Scanner(System.in);
             instruction = scanner.next();
@@ -101,7 +101,7 @@ public class BibliotecaApp {
         return spaces;
     }
 
-    public String printMainMenu() {
-        return "Main Manu:\n * 1. List Books\n * 0. exit";
+    public void printMainMenu() {
+        console.print("Main Manu:\n * 1. List Books\n * 0. exit");
     }
 }

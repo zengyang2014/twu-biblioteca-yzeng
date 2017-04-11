@@ -4,9 +4,7 @@
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 public class BibliotecaAppTest {
 
@@ -41,11 +39,14 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void testShowMainMenu() {
-        String actualPrint = bibliotecaApp.printMainMenu();
-        String expectPrint = "Main Manu:\n * 1. List Books\n * 0. exit";
+    public void shouldPrintMainMenu() {
+        ConsoleOutput output = mock(ConsoleOutput.class);
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(output);
+        bibliotecaApp.printMainMenu();
 
-        assertEquals(expectPrint, actualPrint);
+        verify(output, times(1)).print("Main Manu:\n * 1. List Books\n * 0. exit");
+
+
     }
 
     @Test
