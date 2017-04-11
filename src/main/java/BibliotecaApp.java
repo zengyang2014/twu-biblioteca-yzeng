@@ -55,9 +55,9 @@ public class BibliotecaApp {
         console.print("Select a valid option!");
     }
 
-    public String printBookList() {
+    public void printBookList() {
         if(bookLists == null) {
-            return null;
+            return;
         }
 
         String printString = "";
@@ -65,7 +65,7 @@ public class BibliotecaApp {
             printString += bookLists.get(i).getBookName() + "\n";
         }
 
-        return printString;
+        console.print(printString);
     }
 
     public void printWelcomeMessage() {

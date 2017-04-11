@@ -19,13 +19,13 @@ public class BibliotecaAppTest {
 
     @Test
     public void testPrintBookList() {
-        String actualPrint = bibliotecaApp.printBookList();
+        bibliotecaApp.printBookList();
         String expectPrint = "Test-driven Development\n" +
                 "Refactoring: Improving the Design of Existing Code\n" +
                 "Head First Java\n" +
                 "Core Java Volume I\n";
 
-        assertEquals(expectPrint,actualPrint);
+        verify(output,times(1)).print(expectPrint);
     }
 
     @Test
