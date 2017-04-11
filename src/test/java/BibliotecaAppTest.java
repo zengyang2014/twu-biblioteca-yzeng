@@ -81,10 +81,16 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldCheckoutBookSuccessfully() throws Exception {
-        Book checkoutBook = bibliotecaApp.getBookLists().get(0);
         bibliotecaApp.checkoutBook(0);
 
         assertEquals(3,bibliotecaApp.getBookLists().size());
         verify(output, times(1)).print("Thank you! Enjoy the book");
+    }
+
+    @Test
+    public void shouldCheckoutBookUnsuccessfully() throws Exception {
+        bibliotecaApp.checkoutBook(10);
+
+        verify(output, times(1)).print("That book is not available.");
     }
 }

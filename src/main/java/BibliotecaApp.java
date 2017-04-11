@@ -93,6 +93,9 @@ public class BibliotecaApp {
             bookLists.remove(index);
             console.print("Thank you! Enjoy the book");
         }
+        else {
+            console.print("That book is not available.");
+        }
     }
 
     private String generateOneRow(Book book) {
