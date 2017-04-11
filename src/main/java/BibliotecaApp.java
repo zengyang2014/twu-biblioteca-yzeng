@@ -29,7 +29,7 @@ public class BibliotecaApp {
         printWelcomeMessage();
         String instruction = "";
         while (!instruction.equals("Quit") && !instruction.equals("0")) {
-`            printMainMenu();
+            printMainMenu();
             console.print("Please input the selection:");
             Scanner scanner = new Scanner(System.in);
             instruction = scanner.next();

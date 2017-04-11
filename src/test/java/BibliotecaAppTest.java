@@ -9,10 +9,12 @@ import static org.mockito.Mockito.*;
 public class BibliotecaAppTest {
 
     private BibliotecaApp bibliotecaApp;
+    private ConsoleOutput output;
 
     @Before
     public void testSet() {
-        bibliotecaApp = new BibliotecaApp(new ConsoleOutput());
+        output = mock(ConsoleOutput.class);
+        bibliotecaApp = new BibliotecaApp(output);
     }
 
     @Test
@@ -40,13 +42,9 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldPrintMainMenu() {
-        ConsoleOutput output = mock(ConsoleOutput.class);
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(output);
         bibliotecaApp.printMainMenu();
 
         verify(output, times(1)).print("Main Manu:\n * 1. List Books\n * 0. exit");
-
-
     }
 
     @Test
@@ -67,8 +65,6 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldPrintWelcomeMessage() throws Exception {
-        ConsoleOutput output = mock(ConsoleOutput.class);
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(output);
         bibliotecaApp.printWelcomeMessage();
 
         verify(output, times(1)).print("Welcome to Biblioteca\n------------------------------------------");
