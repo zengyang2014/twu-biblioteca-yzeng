@@ -10,7 +10,7 @@ public class BookList {
         this.bookList = bookList;
     }
 
-    public String printBookList() {
+    public String bookList() {
         if(bookList == null) {
             return null;
         }
@@ -43,7 +43,7 @@ public class BookList {
         }
     }
 
-    public String booksDetail() {
+    public String booksListDetail() {
         String booksDetails = generateOneRow(new Book());
         for(int i = 0; i < bookList.size(); i++)
         {
@@ -70,5 +70,9 @@ public class BookList {
             spaces += " ";
         }
         return spaces;
+    }
+
+    public ArrayList<Book> getBookList() {
+        return bookList;
     }
 }

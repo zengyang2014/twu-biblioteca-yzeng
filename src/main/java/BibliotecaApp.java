@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class BibliotecaApp {
@@ -36,7 +35,7 @@ public class BibliotecaApp {
                 case "0":
                     break;
                 case "1":
-                    console.print(bookList.booksDetail());
+                    console.print(bookList.booksListDetail());
                     printHelpMessageToCheckoutBook();
                     checkoutBook(scanner.nextInt());
                     break;
@@ -57,6 +56,15 @@ public class BibliotecaApp {
         }
         else {
             console.print("That book is not available.");
+        }
+    }
+
+    public void returnBook(Book returnBook) {
+        if(bookList.addBook(returnBook)) {
+            console.print("Thank you for returning the book.");
+        }
+        else {
+            console.print("That is not a valid book to return.");
         }
     }
 

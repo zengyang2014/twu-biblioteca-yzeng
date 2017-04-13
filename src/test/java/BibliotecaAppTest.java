@@ -3,7 +3,6 @@
  */
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class BibliotecaAppTest {
@@ -15,29 +14,6 @@ public class BibliotecaAppTest {
     public void testSet() {
         output = mock(ConsoleOutput.class);
         bibliotecaApp = new BibliotecaApp(output);
-    }
-
-    @Test
-    public void testPrintBookList() {
-        bibliotecaApp.printBookList();
-        String expectPrint = "Test-driven Development\n" +
-                "Refactoring: Improving the Design of Existing Code\n" +
-                "Head First Java\n" +
-                "Core Java Volume I\n";
-
-        verify(output,times(1)).print(expectPrint);
-    }
-
-    @Test
-    public void shouldPrintBookListWithDetail() {
-        bibliotecaApp.printBooksDetail();
-        String expectPrint = "Book Name                                                             Author                                                                Year Published                                                        \n" +
-                "0. Test-driven Development                                               Kent Beck                                                             2003                                                                  \n" +
-                "1. Refactoring: Improving the Design of Existing Code                    Martin Fowler                                                         2012                                                                  \n" +
-                "2. Head First Java                                                       Kathy Sierra, Bert Bates                                              2003                                                                  \n" +
-                "3. Core Java Volume I                                                    Cay S. Horstmann                                                      2015                                                                  \n";
-
-        verify(output, times(1)).print(expectPrint);
     }
 
     @Test
@@ -71,19 +47,9 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void shouldCanCheckoutBook() throws Exception {
-        Book checkoutBook = bibliotecaApp.getBookList().get(1);
-        bibliotecaApp.checkoutBook(1);
-
-        assertEquals(3,bibliotecaApp.getBookList().size());
-        assertTrue(!bibliotecaApp.getBookList().get(1).getBookName().equals(checkoutBook.getBookName()));
-    }
-
-    @Test
     public void shouldCheckoutBookSuccessfully() throws Exception {
         bibliotecaApp.checkoutBook(0);
 
-        assertEquals(3,bibliotecaApp.getBookList().size());
         verify(output, times(1)).print("Thank you! Enjoy the book");
     }
 
@@ -95,20 +61,10 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void shouldCanReturnBook() throws Exception {
-        Book returnBook = new Book("testBook", "testAuthor","testYear");
-        bibliotecaApp.returnBook(returnBook);
-
-        assertEquals(5, bibliotecaApp.getBookList().size());
-        assertTrue(bibliotecaApp.getBookList().contains(returnBook));
-    }
-
-    @Test
     public void shouldReturnBookSuccessfully() throws  Exception {
         Book returnBook = new Book("testBook", "testAuthor","testYear");
         bibliotecaApp.returnBook(returnBook);
 
-        assertTrue(bibliotecaApp.getBookList().contains(returnBook));
         verify(output, times(1)).print("Thank you for returning the book.");
     }
 
@@ -118,15 +74,5 @@ public class BibliotecaAppTest {
         bibliotecaApp.returnBook(returnBook);
 
         verify(output, times(1)).print("That is not a valid book to return.");
-    }
-
-    @Test
-    public void shouldCanListMovies() throws  Exception {
-        String exceptPrint = "Name                                                                  Year                                                                  Director                                                              Rating                                                                \n" +
-                "0. Tootsie                                                               1982                                                                  Sydney Pollack                                                        9                                                                     \n" +
-                "1. The Godfather                                                         1972                                                                  Francis Ford Coppola                                                  9                                                                     \n";
-        bibliotecaApp.printMovieListDetail();
-
-        verify(output,times(1)).print(exceptPrint);
     }
 }
