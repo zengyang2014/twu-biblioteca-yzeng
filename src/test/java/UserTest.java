@@ -18,4 +18,11 @@ public class UserTest {
     public void userFailedLogin() throws Exception {
         assertTrue(!user.login("falseNum","falsePassword"));
     }
+
+    @Test
+    public void shouldShowUserInfo() throws Exception {
+        user = new User("testNum","testPassword", "testName", "testEmail", "testPhoneNumber");
+        String expectString = "testName testEmail testPhoneNumber";
+        assertTrue(expectString.equals(user.userInfo()));
+    }
 }

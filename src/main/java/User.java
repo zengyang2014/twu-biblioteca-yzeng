@@ -38,4 +38,8 @@ public class User {
             rentBooks = new BookList(new ArrayList<Book>());
         rentBooks.addBook(tempBook);
     }
+
+    public String userInfo() {
+        return userName + " " + email + " " + phoneNum;
+    }
 }

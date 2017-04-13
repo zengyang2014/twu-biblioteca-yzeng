@@ -16,7 +16,7 @@ public class BibliotecaApp {
 
     BibliotecaApp(Output output){
         console = output;
-        user = new User("123-0001", "password", "name", "email@biblioteca.com", "61453");
+        user = new User("123-0001", "password", "George", "email@biblioteca.com", "61453");
         initializeBookList();
         initializeMovieList();
     }
@@ -47,12 +47,19 @@ public class BibliotecaApp {
                 case "4":
                     userLogin(scanner.next(), scanner.next());
                     break;
+                case "5":
+                    showUserInfo();
+                    break;
                 default:
                     printWrongInstructionMessage();
                     break;
             }
         }
         printQuitMessage();
+    }
+
+    private void showUserInfo() {
+        console.print(user.userInfo());
     }
 
     public void userLogin(String account, String password) {
