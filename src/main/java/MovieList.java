@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 
-/**
- * Created by yzeng on 13/04/2017.
- */
 public class MovieList {
     private ArrayList<Movie> movieList = null;
     private static final int MAX_CELL_SPACE = 70;

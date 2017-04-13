@@ -1,8 +1,4 @@
 import java.util.ArrayList;
-
-/**
- * Created by yzeng on 13/04/2017.
- */
 public class BookList {
     private static final int MAX_CELL_SPACE = 70;
     private ArrayList<Book> bookList = null;

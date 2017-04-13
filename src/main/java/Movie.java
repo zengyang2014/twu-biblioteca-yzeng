@@ -1,6 +1,3 @@
-/**
- * Created by yzeng on 13/04/2017.
- */
 public class Movie {
     private String name;
 

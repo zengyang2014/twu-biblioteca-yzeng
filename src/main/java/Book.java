@@ -1,6 +1,3 @@
-/**
- * Created by yzeng on 10/04/2017.
- */
 public class Book {
     private String bookName;
     private String author;
