@@ -38,6 +38,8 @@ public class BibliotecaApp {
                     printHelpMessageToCheckoutBook();
                     checkoutBook(scanner.nextInt());
                     break;
+                case "2":
+                    break;
                 default:
                     printWrongInstructionMessage();
                     break;
@@ -85,7 +87,7 @@ public class BibliotecaApp {
     }
 
     public void printMainMenu() {
-        console.print("Main Manu:\n * 1. List Books\n * 0. exit");
+        console.print("Main Manu:\n * 1. List Books\n * 2. List Movies \n * 0. exit");
     }
 
     public void checkoutBook(int index) {

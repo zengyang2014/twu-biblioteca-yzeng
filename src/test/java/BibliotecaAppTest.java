@@ -44,7 +44,7 @@ public class BibliotecaAppTest {
     public void shouldPrintMainMenu() {
         bibliotecaApp.printMainMenu();
 
-        verify(output, times(1)).print("Main Manu:\n * 1. List Books\n * 0. exit");
+        verify(output, times(1)).print("Main Manu:\n * 1. List Books\n * 2. List Movies \n * 0. exit");
     }
 
     @Test
