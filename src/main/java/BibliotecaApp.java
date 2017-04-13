@@ -42,12 +42,19 @@ public class BibliotecaApp {
                 case "2":
                     console.print(movieList.movieListDetail());
                     break;
+                case "3":
+                    printHelpMessageToReturnBook();
+                    break;
                 default:
                     printWrongInstructionMessage();
                     break;
             }
         }
         printQuitMessage();
+    }
+
+    private void printHelpMessageToReturnBook() {
+        console.print("Please input the data of return book. (name, author, published year)");
     }
 
     public void checkoutBook(int index) {
@@ -94,7 +101,7 @@ public class BibliotecaApp {
     }
 
     public void printMainMenu() {
-        console.print("Main Manu:\n * 1. List Books\n * 2. List Movies \n * 0. exit");
+        console.print("Main Manu:\n * 1. List Books\n * 2. List Movies \n * 3. Return Book \n * 0. exit");
     }
 
     private void initializeBookList() {
