@@ -102,7 +102,7 @@ public class BibliotecaApp {
     }
 
     public void printMainMenu() {
-        console.print("Main Manu:\n * 1. List Books\n * 2. List Movies \n * 3. Return Book \n * 0. exit");
+        console.print("Main Manu:\n * 1. List Books\n * 2. List Movies \n * 3. Return Book \n * 4. Login \n * 0. exit");
     }
 
     private void initializeBookList() {
