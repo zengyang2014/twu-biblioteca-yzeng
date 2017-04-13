@@ -44,6 +44,22 @@ public class BibliotecaAppTest {
     }
 
     @Test
+    public void shouldUserCanRendBookAfterLogin() {
+        bibliotecaApp.getUser().login("123-0001", "password");
+        bibliotecaApp.checkoutBook(0);
+
+        verify(output, times(1)).print("Thank you! Enjoy the book");
+    }
+
+    @Test
+    public void shouldUserCannotRendBookAfterLogin() {
+        bibliotecaApp.getUser().login("123-0001", "wrongPassword");
+        bibliotecaApp.checkoutBook(0);
+
+        verify(output, times(1)).print("Please Login!");
+    }
+
+    @Test
     public void shouldCheckoutBookSuccessfully() throws Exception {
         bibliotecaApp.checkoutBook(0);
 

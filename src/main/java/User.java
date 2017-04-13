@@ -20,8 +20,8 @@ public class User {
         this. phoneNum = phoneNum;
     }
 
-    public boolean login(String userName, String userPassword) {
-        if(this.userLibraryNum.equals(userName) && this.userPassword.equals(userPassword)) {
+    public boolean login(String libraryNum, String userPassword) {
+        if(this.userLibraryNum.equals(libraryNum) && this.userPassword.equals(userPassword)) {
             return true;
         }
         return  false;

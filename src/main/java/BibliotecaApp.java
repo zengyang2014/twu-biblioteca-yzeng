@@ -6,14 +6,20 @@ public class BibliotecaApp {
     private BookList bookList = null;
     private Output console;
     private MovieList movieList = null;
+    private User user = null;
 
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp(new ConsoleOutput());
         bibliotecaApp.runApp();
     }
 
+    public User getUser() {
+        return user;
+    }
+
     BibliotecaApp(Output output){
         console = output;
+        user = new User("123-0001", "password", "name", "email@biblioteca.com", "61453");
         initializeBookList();
         initializeMovieList();
     }
@@ -45,6 +51,8 @@ public class BibliotecaApp {
                 case "3":
                     printHelpMessageToReturnBook();
                     returnBook(new Book(scanner.next(), scanner.next(), scanner.next()));
+                    break;
+                case "4":
                     break;
                 default:
                     printWrongInstructionMessage();

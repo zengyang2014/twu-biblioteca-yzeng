@@ -7,15 +7,15 @@ public class UserTest {
     private User user = null;
     @Before
     public void setUp() {
-        user = new User("testName","testPassword");
+        user = new User("testNum","testPassword", "testName");
     }
     @Test
     public void userSuccessLogin() throws Exception {
-        assertTrue(user.login("testName","testPassword"));
+        assertTrue(user.login("testNum","testPassword"));
     }
 
     @Test
     public void userFailedLogin() throws Exception {
-        assertTrue(!user.login("falseName","falsePassword"));
+        assertTrue(!user.login("falseNum","falsePassword"));
     }
 }
