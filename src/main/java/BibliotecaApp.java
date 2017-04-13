@@ -84,12 +84,14 @@ public class BibliotecaApp {
     }
 
     public void returnBook(Book returnBook) {
-        if(bookList.addBook(returnBook)) {
-            console.print("Thank you for returning the book.");
+        if(isLogined) {
+            if (bookList.addBook(returnBook)) {
+                console.print("Thank you for returning the book.");
+            } else {
+                console.print("That is not a valid book to return.");
+            }
         }
-        else {
-            console.print("That is not a valid book to return.");
-        }
+        console.print("Please Login!");
     }
 
 

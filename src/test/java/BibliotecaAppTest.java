@@ -52,7 +52,7 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void shouldUserCannotRendBookAfterLogin() {
+    public void shouldUserCannotRendBookBeforeLogin() {
         bibliotecaApp.userLogin("123-0001", "wrongPassword");
         bibliotecaApp.checkoutBook(0);
 
@@ -76,8 +76,27 @@ public class BibliotecaAppTest {
     }
 
     @Test
+    public void shouldUserCanReturnBookAfterLogin() throws  Exception {
+        Book returnBook = new Book("testBook", "testAuthor","testYear");
+        bibliotecaApp.userLogin("123-0001", "password");
+        bibliotecaApp.returnBook(returnBook);
+
+        verify(output, times(1)).print("Thank you for returning the book.");
+    }
+
+    @Test
+    public void shouldUserCannotReturnBookBeforeLogin() throws  Exception {
+        Book returnBook = new Book("testBook", "testAuthor","testYear");
+        bibliotecaApp.userLogin("123-0001", "wrongPassword");
+        bibliotecaApp.returnBook(returnBook);
+
+        verify(output, times(1)).print("Please Login!");
+    }
+
+    @Test
     public void shouldReturnBookSuccessfully() throws  Exception {
         Book returnBook = new Book("testBook", "testAuthor","testYear");
+        bibliotecaApp.userLogin("123-0001", "password");
         bibliotecaApp.returnBook(returnBook);
 
         verify(output, times(1)).print("Thank you for returning the book.");
@@ -86,6 +105,7 @@ public class BibliotecaAppTest {
     @Test
     public void shouldReturnBookUnsuccessfully() throws Exception {
         Book returnBook = null;
+        bibliotecaApp.userLogin("123-0001", "password");
         bibliotecaApp.returnBook(returnBook);
 
         verify(output, times(1)).print("That is not a valid book to return.");
