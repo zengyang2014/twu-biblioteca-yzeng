@@ -6,7 +6,7 @@ public class CellGenerator {
         return oneCell;
     }
 
-    public static String createSpace(int spaceNum) {
+    private static String createSpace(int spaceNum) {
         String spaces = "";
         for(int i = 0; i < spaceNum; i++) {
             spaces += " ";
