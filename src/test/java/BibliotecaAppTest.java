@@ -17,7 +17,7 @@ public class BibliotecaAppTest {
     public void shouldPrintMainMenu() {
         bibliotecaApp.printMainMenu();
 
-        verify(output, times(1)).print("Main Manu:\n * 1. List Books\n * 2. List Movies \n * 3. Return Book \n * 4. Login \n  * 0. exit");
+        verify(output, times(1)).print("Main Manu:\n * 1. List Books\n * 2. List Movies \n * 3. Return Book \n * 4. Login \n * 0. exit");
     }
 
     @Test
@@ -45,7 +45,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldUserCanRendBookAfterLogin() {
-        bibliotecaApp.getUser().login("123-0001", "password");
+        bibliotecaApp.userLogin("123-0001", "password");
         bibliotecaApp.checkoutBook(0);
 
         verify(output, times(1)).print("Thank you! Enjoy the book");
@@ -53,7 +53,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldUserCannotRendBookAfterLogin() {
-        bibliotecaApp.getUser().login("123-0001", "wrongPassword");
+        bibliotecaApp.userLogin("123-0001", "wrongPassword");
         bibliotecaApp.checkoutBook(0);
 
         verify(output, times(1)).print("Please Login!");
@@ -61,6 +61,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldCheckoutBookSuccessfully() throws Exception {
+        bibliotecaApp.userLogin("123-0001", "password");
         bibliotecaApp.checkoutBook(0);
 
         verify(output, times(1)).print("Thank you! Enjoy the book");
@@ -68,6 +69,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldCheckoutBookUnsuccessfully() throws Exception {
+        bibliotecaApp.userLogin("123-0001", "password");
         bibliotecaApp.checkoutBook(10);
 
         verify(output, times(1)).print("That book is not available.");

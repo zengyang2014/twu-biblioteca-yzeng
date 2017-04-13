@@ -7,6 +7,7 @@ public class BibliotecaApp {
     private Output console;
     private MovieList movieList = null;
     private User user = null;
+    private boolean isLogined = false;
 
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp(new ConsoleOutput());
@@ -53,6 +54,7 @@ public class BibliotecaApp {
                     returnBook(new Book(scanner.next(), scanner.next(), scanner.next()));
                     break;
                 case "4":
+                    userLogin(scanner.next(), scanner.next());
                     break;
                 default:
                     printWrongInstructionMessage();
@@ -62,17 +64,23 @@ public class BibliotecaApp {
         printQuitMessage();
     }
 
+    public void userLogin(String account, String password) {
+        isLogined = user.login(account, password);
+    }
+
     private void printHelpMessageToReturnBook() {
         console.print("Please input the data of return book. (name, author, published year)");
     }
 
     public void checkoutBook(int index) {
-        if(bookList.removeBook(index)) {
-            console.print("Thank you! Enjoy the book");
+        if(isLogined) {
+            if (bookList.removeBook(index)) {
+                console.print("Thank you! Enjoy the book");
+            } else {
+                console.print("That book is not available.");
+            }
         }
-        else {
-            console.print("That book is not available.");
-        }
+        console.print("Please Login!");
     }
 
     public void returnBook(Book returnBook) {
