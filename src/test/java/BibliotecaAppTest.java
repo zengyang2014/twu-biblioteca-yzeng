@@ -72,18 +72,18 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldCanCheckoutBook() throws Exception {
-        Book checkoutBook = bibliotecaApp.getBookLists().get(1);
+        Book checkoutBook = bibliotecaApp.getBookList().get(1);
         bibliotecaApp.checkoutBook(1);
 
-        assertEquals(3,bibliotecaApp.getBookLists().size());
-        assertTrue(!bibliotecaApp.getBookLists().get(1).getBookName().equals(checkoutBook.getBookName()));
+        assertEquals(3,bibliotecaApp.getBookList().size());
+        assertTrue(!bibliotecaApp.getBookList().get(1).getBookName().equals(checkoutBook.getBookName()));
     }
 
     @Test
     public void shouldCheckoutBookSuccessfully() throws Exception {
         bibliotecaApp.checkoutBook(0);
 
-        assertEquals(3,bibliotecaApp.getBookLists().size());
+        assertEquals(3,bibliotecaApp.getBookList().size());
         verify(output, times(1)).print("Thank you! Enjoy the book");
     }
 
@@ -99,8 +99,8 @@ public class BibliotecaAppTest {
         Book returnBook = new Book("testBook", "testAuthor","testYear");
         bibliotecaApp.returnBook(returnBook);
 
-        assertEquals(5, bibliotecaApp.getBookLists().size());
-        assertTrue(bibliotecaApp.getBookLists().contains(returnBook));
+        assertEquals(5, bibliotecaApp.getBookList().size());
+        assertTrue(bibliotecaApp.getBookList().contains(returnBook));
     }
 
     @Test
@@ -108,7 +108,7 @@ public class BibliotecaAppTest {
         Book returnBook = new Book("testBook", "testAuthor","testYear");
         bibliotecaApp.returnBook(returnBook);
 
-        assertTrue(bibliotecaApp.getBookLists().contains(returnBook));
+        assertTrue(bibliotecaApp.getBookList().contains(returnBook));
         verify(output, times(1)).print("Thank you for returning the book.");
     }
 
@@ -118,5 +118,15 @@ public class BibliotecaAppTest {
         bibliotecaApp.returnBook(returnBook);
 
         verify(output, times(1)).print("That is not a valid book to return.");
+    }
+
+    @Test
+    public void shouldCanListMovies() throws  Exception {
+        String exceptPrint = "Name                                                                  Year                                                                  Director                                                              Rating                                                                \n" +
+                "0. Tootsie                                                               1982                                                                  Sydney Pollack                                                        9                                                                     \n" +
+                "1. The Godfather                                                         1972                                                                  Francis Ford Coppola                                                  9                                                                     \n";
+        bibliotecaApp.printMovieListDetail();
+
+        verify(output,times(1)).print(exceptPrint);
     }
 }

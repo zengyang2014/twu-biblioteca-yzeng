@@ -4,8 +4,9 @@ import java.util.Scanner;
 public class BibliotecaApp {
 
     private static final int MAX_CELL_SPACE = 70;
-    private ArrayList<Book> bookLists = null;
+    private ArrayList<Book> bookList = null;
     private Output console;
+    private ArrayList<Movie> movieList = null;
 
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp(new ConsoleOutput());
@@ -15,10 +16,11 @@ public class BibliotecaApp {
     BibliotecaApp(Output output){
         console = output;
         initializeBookList();
+        initializeMovieList();
     }
 
-    public ArrayList<Book> getBookLists() {
-        return bookLists;
+    public ArrayList<Book> getBookList() {
+        return bookList;
     }
 
 
@@ -39,6 +41,7 @@ public class BibliotecaApp {
                     checkoutBook(scanner.nextInt());
                     break;
                 case "2":
+                    printMovieListDetail();
                     break;
                 default:
                     printWrongInstructionMessage();
@@ -46,6 +49,13 @@ public class BibliotecaApp {
             }
         }
         printQuitMessage();
+    }
+
+
+    private void initializeMovieList() {
+        movieList = new ArrayList<>();
+        movieList.add(new Movie("Tootsie", "1982","Sydney Pollack", "9"));
+        movieList.add(new Movie("The Godfather", "1972","Francis Ford Coppola", "9"));
     }
 
     private void printHelpMessageToCheckoutBook() {
@@ -61,13 +71,13 @@ public class BibliotecaApp {
     }
 
     public void printBookList() {
-        if(bookLists == null) {
+        if(bookList == null) {
             return;
         }
 
         String printString = "";
-        for (int i = 0; i < bookLists.size(); i++) {
-            printString += bookLists.get(i).getBookName() + "\n";
+        for (int i = 0; i < bookList.size(); i++) {
+            printString += bookList.get(i).getBookName() + "\n";
         }
 
         console.print(printString);
@@ -79,9 +89,9 @@ public class BibliotecaApp {
 
     public void printBooksDetail() {
         String booksDetails = generateOneRow(new Book());
-        for(int i = 0; i < bookLists.size(); i++)
+        for(int i = 0; i < bookList.size(); i++)
         {
-            booksDetails += i + ". " + generateOneRow(bookLists.get(i));
+            booksDetails += i + ". " + generateOneRow(bookList.get(i));
         }
         console.print(booksDetails);
     }
@@ -91,8 +101,8 @@ public class BibliotecaApp {
     }
 
     public void checkoutBook(int index) {
-        if(index >= 0 && index < bookLists.size()) {
-            bookLists.remove(index);
+        if(index >= 0 && index < bookList.size()) {
+            bookList.remove(index);
             console.print("Thank you! Enjoy the book");
         }
         else {
@@ -102,7 +112,7 @@ public class BibliotecaApp {
 
     public void returnBook(Book returnBook) {
         if(returnBook != null) {
-            bookLists.add(returnBook);
+            bookList.add(returnBook);
             console.print("Thank you for returning the book.");
         }
         else{
@@ -114,6 +124,12 @@ public class BibliotecaApp {
         return generateOneCell(book.getBookName()) +
                 generateOneCell(book.getAuthor()) +
                 generateOneCell(book.getYearPublished()) + "\n";
+    }
+    private String generateOneRow(Movie movie) {
+        return generateOneCell(movie.getName()) +
+                generateOneCell(movie.getYear()) +
+                generateOneCell(movie.getDirector()) +
+                generateOneCell(movie.getRating())+"\n";
     }
 
     private String generateOneCell(String cellElement) {
@@ -131,10 +147,19 @@ public class BibliotecaApp {
     }
 
     private void initializeBookList() {
-        bookLists = new ArrayList<Book>();
-        bookLists.add(new Book("Test-driven Development", "Kent Beck", "2003"));
-        bookLists.add(new Book("Refactoring: Improving the Design of Existing Code", "Martin Fowler", "2012"));
-        bookLists.add(new Book("Head First Java", "Kathy Sierra, Bert Bates", "2003"));
-        bookLists.add(new Book("Core Java Volume I", "Cay S. Horstmann", "2015"));
+        bookList = new ArrayList<Book>();
+        bookList.add(new Book("Test-driven Development", "Kent Beck", "2003"));
+        bookList.add(new Book("Refactoring: Improving the Design of Existing Code", "Martin Fowler", "2012"));
+        bookList.add(new Book("Head First Java", "Kathy Sierra, Bert Bates", "2003"));
+        bookList.add(new Book("Core Java Volume I", "Cay S. Horstmann", "2015"));
+    }
+
+    public void printMovieListDetail() {
+        String moviesDetail = generateOneRow(new Movie());
+        for(int i = 0; i < movieList.size(); i++)
+        {
+            moviesDetail += i + ". " + generateOneRow(movieList.get(i));
+        }
+        console.print(moviesDetail);
     }
 }
