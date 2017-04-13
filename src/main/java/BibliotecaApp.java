@@ -44,6 +44,7 @@ public class BibliotecaApp {
                     break;
                 case "3":
                     printHelpMessageToReturnBook();
+                    returnBook(new Book(scanner.next(), scanner.next(), scanner.next()));
                     break;
                 default:
                     printWrongInstructionMessage();
