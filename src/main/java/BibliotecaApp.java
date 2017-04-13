@@ -14,21 +14,12 @@ public class BibliotecaApp {
         bibliotecaApp.runApp();
     }
 
-    public User getUser() {
-        return user;
-    }
-
     BibliotecaApp(Output output){
         console = output;
         user = new User("123-0001", "password", "name", "email@biblioteca.com", "61453");
         initializeBookList();
         initializeMovieList();
     }
-
-    public BookList getBookList() {
-        return bookList;
-    }
-
 
     public void runApp() {
         printWelcomeMessage();
@@ -73,8 +64,10 @@ public class BibliotecaApp {
     }
 
     public void checkoutBook(int index) {
+        Book tempBook = bookList.getBookList().get(index);
         if(isLogined) {
             if (bookList.removeBook(index)) {
+                user.checkoutBook(tempBook);
                 console.print("Thank you! Enjoy the book");
             } else {
                 console.print("That book is not available.");
@@ -86,6 +79,7 @@ public class BibliotecaApp {
     public void returnBook(Book returnBook) {
         if(isLogined) {
             if (bookList.addBook(returnBook)) {
+                user.getRentBookList().getBookList().remove(returnBook);
                 console.print("Thank you for returning the book.");
             } else {
                 console.print("That is not a valid book to return.");
@@ -131,5 +125,9 @@ public class BibliotecaApp {
         initBookList.add(new Book("Core Java Volume I", "Cay S. Horstmann", "2015"));
 
         bookList = new BookList(initBookList);
+    }
+
+    public User getUser() {
+        return user;
     }
 }

@@ -1,5 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class BibliotecaAppTest {
@@ -109,5 +111,13 @@ public class BibliotecaAppTest {
         bibliotecaApp.returnBook(returnBook);
 
         verify(output, times(1)).print("That is not a valid book to return.");
+    }
+
+    @Test
+    public void shouldRecordWhenUserRendBook() throws Exception {
+        bibliotecaApp.userLogin("123-0001", "password");
+        bibliotecaApp.checkoutBook(1);
+
+        assertTrue(bibliotecaApp.getUser().getRentBookList().getBookList().size() == 1);
     }
 }

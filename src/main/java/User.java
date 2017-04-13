@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class User {
     private String userLibraryNum;
     private String userPassword;
@@ -25,5 +27,15 @@ public class User {
             return true;
         }
         return  false;
+    }
+
+    public BookList getRentBookList() {
+        return rentBooks;
+    }
+
+    public void checkoutBook(Book tempBook) {
+        if(rentBooks == null)
+            rentBooks = new BookList(new ArrayList<Book>());
+        rentBooks.addBook(tempBook);
     }
 }
