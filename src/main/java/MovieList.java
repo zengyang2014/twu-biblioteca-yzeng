@@ -56,4 +56,8 @@ public class MovieList {
         }
         return spaces;
     }
+
+    public ArrayList<Movie> getMovieList() {
+        return movieList;
+    }
 }
