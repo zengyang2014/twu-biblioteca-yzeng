@@ -64,10 +64,8 @@ public class BibliotecaApp {
     }
 
     public void checkoutBook(int index) {
-        Book tempBook = bookList.getBookList().get(index);
         if(isLogined) {
             if (bookList.removeBook(index)) {
-                user.checkoutBook(tempBook);
                 console.print("Thank you! Enjoy the book");
             } else {
                 console.print("That book is not available.");
@@ -79,7 +77,6 @@ public class BibliotecaApp {
     public void returnBook(Book returnBook) {
         if(isLogined) {
             if (bookList.addBook(returnBook)) {
-                user.getRentBookList().getBookList().remove(returnBook);
                 console.print("Thank you for returning the book.");
             } else {
                 console.print("That is not a valid book to return.");
@@ -114,7 +111,8 @@ public class BibliotecaApp {
     }
 
     public void printMainMenu() {
-        console.print("Main Manu:\n * 1. List Books\n * 2. List Movies \n * 3. Return Book \n * 4. Login \n * 0. exit");
+        console.print("Main Manu:\n * 1. List Books\n * 2. List Movies \n" +
+                " * 3. Return Book \n * 4. Login  \n * 5. Show User Info \n * 0. exit");
     }
 
     private void initializeBookList() {

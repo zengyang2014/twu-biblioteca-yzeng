@@ -19,7 +19,8 @@ public class BibliotecaAppTest {
     public void shouldPrintMainMenu() {
         bibliotecaApp.printMainMenu();
 
-        verify(output, times(1)).print("Main Manu:\n * 1. List Books\n * 2. List Movies \n * 3. Return Book \n * 4. Login \n * 0. exit");
+        verify(output, times(1)).print("Main Manu:\n * 1. List Books\n * 2. List Movies \n" +
+                " * 3. Return Book \n * 4. Login  \n * 5. Show User Info \n * 0. exit");
     }
 
     @Test
@@ -113,11 +114,12 @@ public class BibliotecaAppTest {
         verify(output, times(1)).print("That is not a valid book to return.");
     }
 
-    @Test
-    public void shouldRecordWhenUserRendBook() throws Exception {
-        bibliotecaApp.userLogin("123-0001", "password");
-        bibliotecaApp.checkoutBook(1);
+//    @Test
+//    public void shouldRecordWhenUserRendBook() throws Exception {
+//        bibliotecaApp.userLogin("123-0001", "password");
+//        bibliotecaApp.checkoutBook(1);
+//
+//        assertTrue(bibliotecaApp.getUser().getRentBookList().getBookList().size() == 1);
+//    }
 
-        assertTrue(bibliotecaApp.getUser().getRentBookList().getBookList().size() == 1);
-    }
 }

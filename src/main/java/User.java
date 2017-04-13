@@ -6,7 +6,7 @@ public class User {
     private String userName;
     private String email;
     private String phoneNum;
-    private BookList rentBooks;
+    private BookList rentBooks = null;
 
     User(String userLibraryNum, String userPassword, String userName) {
         this.userPassword = userPassword;
