@@ -34,12 +34,6 @@ public class MovieList {
                 generateOneCell(movie.getRating())+"\n";
     }
 
-    private String generateOneRow(Book book) {
-        return generateOneCell(book.getBookName()) +
-                generateOneCell(book.getAuthor()) +
-                generateOneCell(book.getYearPublished()) + "\n";
-    }
-
     private String generateOneCell(String cellElement) {
         String oneCell = "";
         oneCell += cellElement + createSpace(MAX_CELL_SPACE - cellElement.length());
