@@ -1,6 +1,3 @@
-/**
- * Created by yzeng on 13/04/2017.
- */
 public class CellGenerator {
     private static final int MAX_CELL_SPACE = 70;
     public static String generateOneCell(String cellElement) {
