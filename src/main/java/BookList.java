@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 public class BookList {
-    private static final int MAX_CELL_SPACE = 70;
     private ArrayList<Book> bookList = null;
     BookList(ArrayList<Book> bookList) {
         this.bookList = bookList;
@@ -49,23 +48,9 @@ public class BookList {
     }
 
     private String generateOneRow(Book book) {
-        return generateOneCell(book.getBookName()) +
-                generateOneCell(book.getAuthor()) +
-                generateOneCell(book.getYearPublished()) + "\n";
-    }
-
-    private String generateOneCell(String cellElement) {
-        String oneCell = "";
-        oneCell += cellElement + createSpace(MAX_CELL_SPACE - cellElement.length());
-        return oneCell;
-    }
-
-    private String createSpace(int spaceNum) {
-        String spaces = "";
-        for(int i = 0; i < spaceNum; i++) {
-            spaces += " ";
-        }
-        return spaces;
+        return CellGenerator.generateOneCell(book.getBookName()) +
+                CellGenerator.generateOneCell(book.getAuthor()) +
+                CellGenerator.generateOneCell(book.getYearPublished()) + "\n";
     }
 
     public ArrayList<Book> getBookList() {
