@@ -26,10 +26,10 @@ public class BibliotecaApp {
         Invoker invoker = new Invoker();
         CommandParser commandParser = new CommandParser(receiver);
         String command = "";
-        printWelcomeMessage();
+        receiver.doPrintMessage("Welcome to Biblioteca\n------------------------------------------");
         while (!command.equals("0")) {
-            printMainMenu();
-            console.print("Please input the command:");
+            receiver.doPrintMenu();
+            receiver.doPrintMessage("Please input the command:");
             Scanner scanner = new Scanner(System.in);
             command = scanner.next();
             invoker.setCommand(commandParser.parseCommand(command));
@@ -70,7 +70,7 @@ public class BibliotecaApp {
 //                    break;
 //            }
 //        }
-        printQuitMessage();
+        receiver.doPrintMessage("Goodbye!");
     }
 
     private void showUserInfo() {
@@ -118,23 +118,6 @@ public class BibliotecaApp {
 
     private void printHelpMessageToCheckoutBook() {
         console.print("Input the index of book which need to checkout.");
-    }
-
-    public void printQuitMessage() {
-        console.print("Goodbye!");
-    }
-
-    public void printWrongInstructionMessage() {
-        console.print("Select a valid option!");
-    }
-
-    public void printWelcomeMessage() {
-        console.print("Welcome to Biblioteca\n------------------------------------------");
-    }
-
-    public void printMainMenu() {
-        console.print("Main Manu:\n * 1. List Books\n * 2. List Movies \n" +
-                " * 3. Return Book \n * 4. Login  \n * 5. Show User Info \n * 0. exit");
     }
 
     private void initializeBookList() {
