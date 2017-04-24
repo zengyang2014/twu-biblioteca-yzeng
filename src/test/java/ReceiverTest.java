@@ -1,6 +1,14 @@
+import lists.BookList;
+import lists.MovieList;
+import models.Book;
+import models.Movie;
+import models.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
+import receivers.Receiver;
+import services.ConsoleInput;
+import services.ConsoleOutput;
 
 import java.util.ArrayList;
 
@@ -52,7 +60,7 @@ public class ReceiverTest {
         receiver.doPrintMenu();
 
         verify(output, times(1)).print("Main Manu:\n * 1. List Books\n * 2. List Movies \n" +
-                " * 3. Return Book \n * 4. Login  \n * 5. Show User Info \n * 0. exit");
+                " * 3. Return models.Book \n * 4. Login  \n * 5. Show models.User Info \n * 0. exit");
     }
 
     @Test

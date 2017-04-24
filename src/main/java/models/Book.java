@@ -1,15 +1,17 @@
+package models;
+
 public class Book {
     private String bookName;
     private String author;
     private String yearPublished;
 
-    Book(){
-        bookName="Book Name";
+    public Book(){
+        bookName="models.Book Name";
         author="Author";
         yearPublished="Year Published";
     }
 
-    Book(String bookName, String author, String yearPublished) {
+    public Book(String bookName, String author, String yearPublished) {
         this.bookName = bookName;
         this.author = author;
         this.yearPublished = yearPublished;

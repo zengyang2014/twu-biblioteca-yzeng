@@ -1,3 +1,8 @@
+package models;
+
+import lists.BookList;
+import models.Book;
+
 import java.util.ArrayList;
 
 public class User {
@@ -8,13 +13,13 @@ public class User {
     private String phoneNum;
     private BookList rentBooks = null;
 
-    User(String userLibraryNum, String userPassword, String userName) {
+    public User(String userLibraryNum, String userPassword, String userName) {
         this.userPassword = userPassword;
         this.userName = userName;
         this.userLibraryNum = userLibraryNum;
     }
 
-    User(String userLibraryNum, String userPassword, String userName, String email, String phoneNum) {
+    public User(String userLibraryNum, String userPassword, String userName, String email, String phoneNum) {
         this.userPassword = userPassword;
         this.userName = userName;
         this.userLibraryNum = userLibraryNum;

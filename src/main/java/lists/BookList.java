@@ -1,7 +1,12 @@
+package lists;
+
+import models.Book;
+import services.CellGenerator;
+
 import java.util.ArrayList;
 public class BookList {
     private ArrayList<Book> bookList = null;
-    BookList(ArrayList<Book> bookList) {
+    public BookList(ArrayList<Book> bookList) {
         this.bookList = bookList;
     }
 

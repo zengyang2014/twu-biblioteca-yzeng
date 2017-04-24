@@ -1,3 +1,5 @@
+package services;
+
 public class CellGenerator {
     private static final int MAX_CELL_SPACE = 70;
     public static String generateOneCell(String cellElement) {

@@ -1,9 +1,14 @@
+package lists;
+
+import models.Movie;
+import services.CellGenerator;
+
 import java.util.ArrayList;
 
 public class MovieList {
     private ArrayList<Movie> movieList = null;
 
-    MovieList(ArrayList<Movie> movieList) {
+    public MovieList(ArrayList<Movie> movieList) {
         this.movieList = movieList;
     }
 

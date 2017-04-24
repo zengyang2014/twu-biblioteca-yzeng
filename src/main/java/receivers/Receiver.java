@@ -1,3 +1,14 @@
+package receivers;
+
+import interfaces.Input;
+import interfaces.Output;
+import lists.BookList;
+import lists.MovieList;
+import models.Book;
+import models.User;
+import services.ConsoleInput;
+import services.ConsoleOutput;
+
 public class Receiver {
     private Output console;
     private Input input;
@@ -38,12 +49,12 @@ public class Receiver {
 
     public void doPrintMenu() {
         doPrintMessage("Main Manu:\n * 1. List Books\n * 2. List Movies \n" +
-                " * 3. Return Book \n * 4. Login  \n * 5. Show User Info \n * 0. exit");
+                " * 3. Return models.Book \n * 4. Login  \n * 5. Show models.User Info \n * 0. exit");
     }
 
     public void doListBookDetail() {
         doPrintMessage(bookList.booksListDetail());
-        doPrintMessage("Input the index of book which need to checkout.");
+        doPrintMessage("interfaces.Input the index of book which need to checkout.");
         doCheckoutBook();
     }
 

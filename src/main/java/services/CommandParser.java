@@ -1,3 +1,9 @@
+package services;
+
+import commands.*;
+import interfaces.Command;
+import receivers.Receiver;
+
 public class CommandParser {
     private Receiver receiver = null;
     public CommandParser(Receiver receiver) {

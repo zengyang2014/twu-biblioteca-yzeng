@@ -1,3 +1,5 @@
+import lists.MovieList;
+import models.Movie;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;

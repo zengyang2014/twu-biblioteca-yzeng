@@ -1,3 +1,8 @@
+package commands;
+
+import interfaces.Command;
+import receivers.Receiver;
+
 public class CommandPrintWrongMessage implements Command {
     private Receiver receiver = null;
 

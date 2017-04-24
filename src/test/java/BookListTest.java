@@ -1,3 +1,5 @@
+import lists.BookList;
+import models.Book;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -35,12 +37,11 @@ public class BookListTest {
 
     @Test
     public void shouldReturnBookListDetail() {
-        String expectPrint = "Book Name                                                             Author                                                                Year Published                                                        \n" +
+        String expectPrint = "models.Book Name                                                      Author                                                                Year Published                                                        \n" +
                 "0. Test-driven Development                                               Kent Beck                                                             2003                                                                  \n" +
                 "1. Refactoring: Improving the Design of Existing Code                    Martin Fowler                                                         2012                                                                  \n" +
                 "2. Head First Java                                                       Kathy Sierra, Bert Bates                                              2003                                                                  \n" +
                 "3. Core Java Volume I                                                    Cay S. Horstmann                                                      2015                                                                  \n";
-
         assertEquals(expectPrint, bookList.booksListDetail());
     }
 
