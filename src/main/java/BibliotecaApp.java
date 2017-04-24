@@ -7,7 +7,7 @@ public class BibliotecaApp {
     private Output console;
     private MovieList movieList = null;
     private User user = null;
-    private boolean isLogined = false;
+    private boolean isLogin = false;
 
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp(new ConsoleOutput());
@@ -78,7 +78,7 @@ public class BibliotecaApp {
     }
 
     public void userLogin(String account, String password) {
-        isLogined = user.login(account, password);
+        isLogin = user.login(account, password);
     }
 
     private void printHelpMessageToReturnBook() {
@@ -86,7 +86,7 @@ public class BibliotecaApp {
     }
 
     public void checkoutBook(int index) {
-        if(isLogined) {
+        if(isLogin) {
             if (bookList.removeBook(index)) {
                 console.print("Thank you! Enjoy the book");
             } else {
@@ -97,7 +97,7 @@ public class BibliotecaApp {
     }
 
     public void returnBook(Book returnBook) {
-        if(isLogined) {
+        if(isLogin) {
             if (bookList.addBook(returnBook)) {
                 console.print("Thank you for returning the book.");
             } else {
