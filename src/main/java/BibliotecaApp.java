@@ -4,25 +4,23 @@ import java.util.Scanner;
 public class BibliotecaApp {
 
     private BookList bookList = null;
-    private Output console;
     private MovieList movieList = null;
     private User user = null;
     private boolean isLogin = false;
 
     public static void main(String[] args) {
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(new ConsoleOutput());
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
         bibliotecaApp.runApp();
     }
 
-    BibliotecaApp(Output output){
-        console = output;
+    BibliotecaApp() {
         user = new User("123-0001", "password", "George", "email@biblioteca.com", "61453");
         initializeBookList();
         initializeMovieList();
     }
 
     public void runApp() {
-        Receiver receiver = new Receiver();
+        Receiver receiver = new Receiver(bookList, movieList, isLogin, user);
         Invoker invoker = new Invoker();
         CommandParser commandParser = new CommandParser(receiver);
         String command = "";
@@ -36,88 +34,15 @@ public class BibliotecaApp {
             invoker.executeCommand();
         }
 
-
-//        printWelcomeMessage();
-//        String instruction = "";
-//        while (!instruction.equals("Quit") && !instruction.equals("0")) {
-//            printMainMenu();
-//            console.print("Please input the selection:");
-//            Scanner scanner = new Scanner(System.in);
-//            instruction = scanner.next();
-//            switch (instruction) {
-//                case "0":
-//                    break;
-//                case "1":
-//                    console.print(bookList.booksListDetail());
-//                    printHelpMessageToCheckoutBook();
-//                    checkoutBook(scanner.nextInt());
-//                    break;
-//                case "2":
-//                    console.print(movieList.movieListDetail());
-//                    break;
-//                case "3":
-//                    printHelpMessageToReturnBook();
-//                    returnBook(new Book(scanner.next(), scanner.next(), scanner.next()));
-//                    break;
-//                case "4":
-//                    userLogin(scanner.next(), scanner.next());
-//                    break;
-//                case "5":
-//                    showUserInfo();
-//                    break;
-//                default:
-//                    printWrongInstructionMessage();
-//                    break;
-//            }
-//        }
         receiver.doPrintMessage("Goodbye!");
     }
 
-    private void showUserInfo() {
-        console.print(user.userInfo());
-    }
-
-    public void userLogin(String account, String password) {
-        isLogin = user.login(account, password);
-    }
-
-    private void printHelpMessageToReturnBook() {
-        console.print("Please input the data of return book. (name, author, published year)");
-    }
-
-    public void checkoutBook(int index) {
-        if(isLogin) {
-            if (bookList.removeBook(index)) {
-                console.print("Thank you! Enjoy the book");
-            } else {
-                console.print("That book is not available.");
-            }
-        }
-        console.print("Please Login!");
-    }
-
-    public void returnBook(Book returnBook) {
-        if(isLogin) {
-            if (bookList.addBook(returnBook)) {
-                console.print("Thank you for returning the book.");
-            } else {
-                console.print("That is not a valid book to return.");
-            }
-        }
-        console.print("Please Login!");
-    }
-
-
     private void initializeMovieList() {
         ArrayList<Movie> initMovieList = new ArrayList<>();
-        initMovieList.add(new Movie("Tootsie", "1982","Sydney Pollack", "9"));
-        initMovieList.add(new Movie("The Godfather", "1972","Francis Ford Coppola", "9"));
+        initMovieList.add(new Movie("Tootsie", "1982", "Sydney Pollack", "9"));
+        initMovieList.add(new Movie("The Godfather", "1972", "Francis Ford Coppola", "9"));
 
         movieList = new MovieList(initMovieList);
-    }
-
-    private void printHelpMessageToCheckoutBook() {
-        console.print("Input the index of book which need to checkout.");
     }
 
     private void initializeBookList() {
@@ -128,9 +53,5 @@ public class BibliotecaApp {
         initBookList.add(new Book("Core Java Volume I", "Cay S. Horstmann", "2015"));
 
         bookList = new BookList(initBookList);
-    }
-
-    public User getUser() {
-        return user;
     }
 }
