@@ -22,39 +22,54 @@ public class BibliotecaApp {
     }
 
     public void runApp() {
+        Receiver receiver = new Receiver();
+        Invoker invoker = new Invoker();
+        CommandParser commandParser = new CommandParser(receiver);
+        String command = "";
         printWelcomeMessage();
-        String instruction = "";
-        while (!instruction.equals("Quit") && !instruction.equals("0")) {
+        while (!command.equals("0")) {
             printMainMenu();
-            console.print("Please input the selection:");
+            console.print("Please input the command:");
             Scanner scanner = new Scanner(System.in);
-            instruction = scanner.next();
-            switch (instruction) {
-                case "0":
-                    break;
-                case "1":
-                    console.print(bookList.booksListDetail());
-                    printHelpMessageToCheckoutBook();
-                    checkoutBook(scanner.nextInt());
-                    break;
-                case "2":
-                    console.print(movieList.movieListDetail());
-                    break;
-                case "3":
-                    printHelpMessageToReturnBook();
-                    returnBook(new Book(scanner.next(), scanner.next(), scanner.next()));
-                    break;
-                case "4":
-                    userLogin(scanner.next(), scanner.next());
-                    break;
-                case "5":
-                    showUserInfo();
-                    break;
-                default:
-                    printWrongInstructionMessage();
-                    break;
-            }
+            command = scanner.next();
+            invoker.setCommand(commandParser.parseCommand(command));
+            invoker.executeCommand();
         }
+
+
+//        printWelcomeMessage();
+//        String instruction = "";
+//        while (!instruction.equals("Quit") && !instruction.equals("0")) {
+//            printMainMenu();
+//            console.print("Please input the selection:");
+//            Scanner scanner = new Scanner(System.in);
+//            instruction = scanner.next();
+//            switch (instruction) {
+//                case "0":
+//                    break;
+//                case "1":
+//                    console.print(bookList.booksListDetail());
+//                    printHelpMessageToCheckoutBook();
+//                    checkoutBook(scanner.nextInt());
+//                    break;
+//                case "2":
+//                    console.print(movieList.movieListDetail());
+//                    break;
+//                case "3":
+//                    printHelpMessageToReturnBook();
+//                    returnBook(new Book(scanner.next(), scanner.next(), scanner.next()));
+//                    break;
+//                case "4":
+//                    userLogin(scanner.next(), scanner.next());
+//                    break;
+//                case "5":
+//                    showUserInfo();
+//                    break;
+//                default:
+//                    printWrongInstructionMessage();
+//                    break;
+//            }
+//        }
         printQuitMessage();
     }
 
