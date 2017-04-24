@@ -1,7 +1,10 @@
 public class Receiver {
-    private ConsoleOutput console;
+    private Output console;
     public Receiver() {
         console = new ConsoleOutput();
+    }
+    public Receiver(Output output) {
+        this.console = output;
     }
     public void doQuit() {
         return;

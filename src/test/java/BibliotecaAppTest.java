@@ -16,37 +16,6 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void shouldPrintMainMenu() {
-        bibliotecaApp.printMainMenu();
-
-        verify(output, times(1)).print("Main Manu:\n * 1. List Books\n * 2. List Movies \n" +
-                " * 3. Return Book \n * 4. Login  \n * 5. Show User Info \n * 0. exit");
-    }
-
-    @Test
-    public void shouldShowInvalidMessage() {
-        String expectPrint = "Select a valid option!";
-        bibliotecaApp.printWrongInstructionMessage();
-
-        verify(output, times(1)).print(expectPrint);
-    }
-
-    @Test
-    public void testPrintQuitMessage() {
-        String expectPrint = "Goodbye!";
-        bibliotecaApp.printQuitMessage();
-
-        verify(output, times(1)).print(expectPrint);
-    }
-
-    @Test
-    public void shouldPrintWelcomeMessage() throws Exception {
-        bibliotecaApp.printWelcomeMessage();
-
-        verify(output, times(1)).print("Welcome to Biblioteca\n------------------------------------------");
-    }
-
-    @Test
     public void shouldUserCanRendBookAfterLogin() {
         bibliotecaApp.userLogin("123-0001", "password");
         bibliotecaApp.checkoutBook(0);
