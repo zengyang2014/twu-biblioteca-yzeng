@@ -10,6 +10,13 @@ public class CommandLogin implements Command {
     }
 
     @Override
+    public boolean shouldExecute(String command) {
+        if (command.equals("4"))
+            return true;
+        return false;
+    }
+
+    @Override
     public void execute() {
         receiver.doLogin();
     }

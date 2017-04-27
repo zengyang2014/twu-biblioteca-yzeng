@@ -10,6 +10,13 @@ public class CommandListMovies implements Command {
     }
 
     @Override
+    public boolean shouldExecute(String command) {
+        if(command.equals("2"))
+            return true;
+        return false;
+    }
+
+    @Override
     public void execute() {
         receiver.doListMovies();
     }

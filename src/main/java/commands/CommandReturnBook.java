@@ -10,6 +10,13 @@ public class CommandReturnBook implements Command {
     }
 
     @Override
+    public boolean shouldExecute(String command) {
+        if (command.equals("3"))
+            return true;
+        return false;
+    }
+
+    @Override
     public void execute() {
         receiver.doReturnBook();
     }

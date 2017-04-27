@@ -10,6 +10,13 @@ public class CommandShowUserInfo implements Command {
     }
 
     @Override
+    public boolean shouldExecute(String command) {
+        if (command.equals("5"))
+            return true;
+        return false;
+    }
+
+    @Override
     public void execute() {
         receiver.doShowUserInfo();
     }

@@ -9,6 +9,12 @@ public class CommandPrintWrongMessage implements Command {
     public CommandPrintWrongMessage(Receiver receiver) {
         this.receiver = receiver;
     }
+
+    @Override
+    public boolean shouldExecute(String command) {
+        return false;
+    }
+
     @Override
     public void execute() {
         receiver.doPrintWrongMessage();

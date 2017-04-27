@@ -4,27 +4,32 @@ import commands.*;
 import interfaces.Command;
 import receivers.Receiver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CommandParser {
     private Receiver receiver = null;
+    private ArrayList<Command> registedCommands = null;
+
     public CommandParser(Receiver receiver) {
         this.receiver = receiver;
+        registedCommands = new ArrayList<Command>() {{
+            add(new CommandQuit(receiver));
+            add(new CommandListBooksDetail(receiver));
+            add(new CommandListMovies(receiver));
+            add(new CommandReturnBook(receiver));
+            add(new CommandLogin(receiver));
+            add(new CommandShowUserInfo(receiver));
+            add(new CommandPrintWrongMessage(receiver));
+        }};
     }
+
     public Command parseCommand(String strCommand) {
-        switch (strCommand) {
-            case "0":
-                return new CommandQuit(receiver);
-            case "1":
-                return new CommandListBooksDetail(receiver);
-            case "2":
-                return new CommandListMovies(receiver);
-            case "3":
-                return new CommandReturnBook(receiver);
-            case "4":
-                return new CommandLogin(receiver);
-            case "5":
-                return new CommandShowUserInfo(receiver);
-            default:
-                return new CommandPrintWrongMessage(receiver);
+        for (Command command : registedCommands) {
+            if (command.shouldExecute(strCommand)) {
+                return command;
+            }
         }
+        return new CommandPrintWrongMessage(receiver);
     }
 }
