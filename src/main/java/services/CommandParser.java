@@ -5,15 +5,14 @@ import interfaces.Command;
 import receivers.Receiver;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CommandParser {
     private Receiver receiver = null;
-    private ArrayList<Command> registedCommands = null;
+    private ArrayList<Command> registerCommands = null;
 
     public CommandParser(Receiver receiver) {
         this.receiver = receiver;
-        registedCommands = new ArrayList<Command>() {{
+        registerCommands = new ArrayList<Command>() {{
             add(new CommandQuit(receiver));
             add(new CommandListBooksDetail(receiver));
             add(new CommandListMovies(receiver));
@@ -25,7 +24,7 @@ public class CommandParser {
     }
 
     public Command parseCommand(String strCommand) {
-        for (Command command : registedCommands) {
+        for (Command command : registerCommands) {
             if (command.shouldExecute(strCommand)) {
                 return command;
             }
